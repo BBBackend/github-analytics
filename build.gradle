@@ -70,18 +70,13 @@ if (gradle.startParameter.taskRequests.any { it.args.contains("apiCompatibility"
 
 dependencies {
 	compile ('org.springframework.analytics:spring-analytics:1.0.0.RELEASE')
-	compile ('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile ('org.hibernate:hibernate-validator')
-	compile ('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 	compile ('org.springframework.boot:spring-boot-starter-actuator')
 	compile ('org.flywaydb:flyway-core')
 	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile ('org.springframework.boot:spring-boot-starter-web')
 	compile ('com.h2database:h2')
-	compile ('mysql:mysql-connector-java')
 	compile ('org.springframework.metrics:spring-metrics:0.4.0.RELEASE')
-	// Prometheus
-	compile ("io.prometheus:simpleclient_common:${prometheusVersion}")
 
 	testCompile ('org.springframework.cloud:spring-cloud-starter-contract-stub-runner')
 	testCompile ('org.springframework.cloud:spring-cloud-stream-test-support')

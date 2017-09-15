@@ -1,15 +1,11 @@
 package org.springframework.github;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.ToDoubleFunction;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.actuate.metrics.GaugeService;
-import org.springframework.metrics.instrument.Gauge;
-import org.springframework.metrics.instrument.MeterRegistry;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Marcin Grzejszczak
@@ -20,9 +16,8 @@ class IssuesService {
 
 	private final IssuesRepository repository;
 
-	IssuesService(IssuesRepository repository, MeterRegistry meterRegistry) {
+	IssuesService(IssuesRepository repository) {
 		this.repository = repository;
-		meterRegistry.gauge("issues", this, IssuesService::count);
 	}
 
 	void save(String user, String repo) {

@@ -25,3 +25,5 @@ artifacts
 *.versionsBackup
 .gradle
 *.log
+out/
+.idea/
